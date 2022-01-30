@@ -6,7 +6,7 @@
     </div>
     <div class="post__buttons">
       <my-button class="btn--edit" @click="postEdit">Edit</my-button>
-      <my-button class="btn--delete" @click="postDelete">Delete</my-button>
+      <my-button class="btn--delete" @click="$emit('remove', post)">Delete</my-button>
     </div>
   </div>
 </template>
@@ -21,10 +21,10 @@
     },
     methods: {
       postEdit(event) {
-        console.log(event.target);
+        
       },
       postDelete(event) {
-        console.log(event.target);
+
       }
     }
   }

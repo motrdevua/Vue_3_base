@@ -28,11 +28,13 @@
     },
     methods: {
       createPost() {
-        this.post.id = Date.now();
-        this.$emit('create', this.post)
-        this.post = {
-          title: '',
-          body: ''
+        if (this.post.title !== '' || this.post.body !== '') {
+          this.post.id = Date.now();
+          this.$emit('create', this.post)
+          this.post = {
+            title: '',
+            body: ''
+          }
         }
       }
     }
